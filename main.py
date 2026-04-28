@@ -1,6 +1,8 @@
-# point d'entrée de l'application Deskmanger
-# Lance la base de donnée et l'interface graphique
 # -*- coding: utf-8 -*-
+
+# point d'entrÃ©e de l'application Deskmanger
+# Lance la base de donnÃ©e et l'interface graphique
+
 
 import os
 import sys
