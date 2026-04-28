@@ -11,7 +11,7 @@ class Employe :
 
     def __str__(self):
         return(
-            f"Employé #{self.id}|"
+            f"EmployÃ© #{self.id}|"
             f"{self.get_nom_complet()}|"
             f"service:{self.service}"
 

@@ -1,5 +1,5 @@
-# attribution.py – Modèle d'une attribution
-# Représente le lien entre un employé et un matériel
+# attribution.py à Modèle d'une attribution
+# ReprÃ©sente le lien entre un employÃ© et un matÃ©riel
 
 
 class Attribution : 

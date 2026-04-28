@@ -1,8 +1,8 @@
 class Materiel : 
     TYPE_VALIDES=[
         "Ordinateur portable",
-        "Écran",
-        "Téléphone professionnel",
+        "Ã‰cran",
+        "TÃ©lÃ©phone professionnel",
         "Accessoire informatique",]
 
     def __init__(self, id:int, type:str, marque:str, modele:str, numero_serie:str):
@@ -17,7 +17,7 @@ class Materiel :
         return f"{self.marque} {self.type} {self.modele}"
 
     def __str__(self)->str:
-        return (f"Matériel #{self.id}|"
+        return (f"MatÃ©riel #{self.id}|"
                 f"{self.get_designation}|"
                 f"N/S : {self.mumero.derie}"
                 )

@@ -1,4 +1,4 @@
-#base de donnée
+#base de donnÃ©e
 
 import sqlite3
 
@@ -39,12 +39,12 @@ class DatabaseManager:
         """)
         self.connexion.commit()
 
-        #méthode CRU : create , read , update
+        #mÃ©thode CRU : create , read , update
 
-        #______employé_______
+        #______employÃ©_______
 
     def ajouter_employe(self, nom:str, prenom:str ,service:str) ->int:
-        """Ajouter un nouvel employe a la base donnée"""
+        """Ajouter un nouvel employe a la base donnÃ©e"""
         self.curseur.execute(
             "INSERT INTO employes (nom, prenom ,service) VALUES(?,?,?)",(nom, prenom, service)
         )
@@ -81,11 +81,11 @@ class DatabaseManager:
             "INSERT INTO materiels (type , marque, modele, numero_serie) VALUES(?,?,?,?)",(type, marque, modele, numero_serie)
         )
         self.connexion.commit()
-        # récupère l'id généré automatiquement par SQLite après l'insertion
+        # rÃ©cupÃ¨re l'id gÃ©nÃ©rÃ© automatiquement par SQLite aprÃ¨s l'insertion
         return self.curseur.lastrowid
     
     def modifier_materiel(self, id: int, type: str, marque: str, modele: str, numero_serie: str) -> None:
-        """Modifie un matériel existant."""
+        """Modifie un materiel existant."""
         self.curseur.execute(
             "UPDATE materiels SET type=?, marque=?, modele=?, numero_serie=? WHERE id=?",
         (type, marque, modele, numero_serie, id)
@@ -93,19 +93,19 @@ class DatabaseManager:
         self.connexion.commit()
 
     def supprimer_materiel(self, id: int) ->None:
-        """Supprime un matériel et ses attributions"""
+        """Supprime un matÃ©riel et ses attributions"""
         self.curseur.execute("DELETE FROM attributions WHERE materiel_id=?", (id,))
         self.curseur.execute("DELETE FROM materiels WHERE id=?",(id,))
         self.connexion.commit()
 
     def get_all_materiels(self) ->list:
-        """Retourne tous les matériels"""
+        """Retourne tous les materiels"""
         self.curseur.execute("SELECT * FROM materiels ORDER BY type, marque")
         return self.curseur.fetchall()
   
     
     def get_materiels_disponibles(self) ->list:
-        """retourne les materiels non attribués"""
+        """retourne les materiels non attribuÃ©s"""
         self.curseur.execute("""
             SELECT * FROM materiels
             WHERE id NOT IN(SELECT materiel_id FROM attributions)

@@ -25,7 +25,7 @@ class MaterielUI:
     def _build_ui(self):
         """Construit les éléments visuels."""
 
-        # ── Formulaire ──────────────────────────────
+        # ── Formulaire ──────────────────────────────────
         frame_form = tk.LabelFrame(self.fenetre, text="Matériel", padx=10, pady=10)
         frame_form.pack(fill="x", padx=10, pady=10)
 
@@ -55,15 +55,15 @@ class MaterielUI:
         self.entry_numero_serie = tk.Entry(frame_form, width=30)
         self.entry_numero_serie.grid(row=3, column=1, padx=5, pady=3)
 
-        # ── Boutons ──────────────────────────────────
+        # ── Boutons ──────────────────────────────────────
         frame_boutons = tk.Frame(self.fenetre)
         frame_boutons.pack(pady=5)
 
-        tk.Button(frame_boutons, text="➕ Ajouter",   width=15, command=self._ajouter).pack(side="left", padx=5)
-        tk.Button(frame_boutons, text="✏️ Modifier",  width=15, command=self._modifier).pack(side="left", padx=5)
-        tk.Button(frame_boutons, text="🗑️ Supprimer", width=15, command=self._supprimer).pack(side="left", padx=5)
+        tk.Button(frame_boutons, text="➕ Ajouter",    width=15, command=self._ajouter).pack(side="left", padx=5)
+        tk.Button(frame_boutons, text="✏️ Modifier",   width=15, command=self._modifier).pack(side="left", padx=5)
+        tk.Button(frame_boutons, text="🗑️ Supprimer",  width=15, command=self._supprimer).pack(side="left", padx=5)
 
-        # ── Tableau ──────────────────────────────────
+        # ── Tableau ──────────────────────────────────────
         frame_tableau = tk.Frame(self.fenetre)
         frame_tableau.pack(fill="both", expand=True, padx=10, pady=5)
 

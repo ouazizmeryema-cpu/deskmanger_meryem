@@ -10,7 +10,7 @@ class EmployeUI:
 
         # Création de la fenêtre
         self.fenetre = tk.Toplevel(parent)
-        self.fenetre.title("Gestion des employés")  # ❌ titke → title
+        self.fenetre.title("Gestion des employés")
         self.fenetre.geometry("600x400")
 
         # Construction de l'interface
@@ -40,9 +40,9 @@ class EmployeUI:
         frame_boutons = tk.Frame(self.fenetre)
         frame_boutons.pack(pady=5)
 
-        tk.Button(frame_boutons, text="➕ Ajouter",   width=15, command=self._ajouter).pack(side="left", padx=5)
-        tk.Button(frame_boutons, text="✏️ Modifier",  width=15, command=self._modifier).pack(side="left", padx=5)
-        tk.Button(frame_boutons, text="🗑️ Supprimer", width=15, command=self._supprimer).pack(side="left", padx=5)
+        tk.Button(frame_boutons, text="➕ Ajouter",    width=15, command=self._ajouter).pack(side="left", padx=5)
+        tk.Button(frame_boutons, text="✏️ Modifier",   width=15, command=self._modifier).pack(side="left", padx=5)
+        tk.Button(frame_boutons, text="🗑️ Supprimer",  width=15, command=self._supprimer).pack(side="left", padx=5)
 
         # Tableau
         frame_tableau = tk.Frame(self.fenetre)
@@ -63,8 +63,6 @@ class EmployeUI:
 
         self.tableau.pack(fill="both", expand=True)
         self.tableau.bind("<<TreeviewSelect>>", self._selectionner)
-
-    # ❌ ces méthodes étaient à l'intérieur de _build_ui → à mettre dehors !
 
     def _charger_employes(self):
         """Charge et affiche tous les employés."""
@@ -129,7 +127,7 @@ class EmployeUI:
 
     def _vider_formulaire(self):
         """Vide les champs du formulaire."""
-        self.entry_nom.delete(0, tk.END)      # ❌ entry_nom_delete → entry_nom.delete
+        self.entry_nom.delete(0, tk.END)
         self.entry_prenom.delete(0, tk.END)
         self.entry_service.delete(0, tk.END)
         if hasattr(self, "selected_id"):
